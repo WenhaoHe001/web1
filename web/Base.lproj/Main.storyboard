@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--webView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="web" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="719" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-CW-6Hb">
+                                <rect key="frame" x="0.0" y="91" width="414" height="719"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="YpB-Sg-u9w" appends="YES" id="eTb-eR-T0L"/>
+                                </connections>
+                            </wkWebView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="M3J-wj-68a">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U2-AC-HjK">
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <state key="normal" title="&lt;"/>
+                                        <connections>
+                                            <action selector="goBackAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKo-Rp-Dfr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-nr-vZh">
+                                        <rect key="frame" x="60" y="0.0" width="58" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <state key="normal" title="&gt;"/>
+                                        <connections>
+                                            <action selector="goForwardAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Krs-3b-lRI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laO-oJ-Pi3">
+                                        <rect key="frame" x="120" y="0.0" width="60" height="44"/>
+                                        <state key="normal" title="书签"/>
+                                        <connections>
+                                            <segue destination="2kl-SS-G9s" kind="presentation" identifier="showBookMarks" id="JpS-Gf-MJn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-xD-abq">
+                                        <rect key="frame" x="182" y="0.0" width="120" height="44"/>
+                                        <state key="normal" title="历史记录"/>
+                                        <connections>
+                                            <segue destination="2kl-SS-G9s" kind="presentation" identifier="showHistorys" id="TlQ-7L-8vK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMf-Eo-qnt">
+                                        <rect key="frame" x="304" y="0.0" width="60" height="44"/>
+                                        <state key="normal" title="收藏"/>
+                                        <connections>
+                                            <action selector="addURLToBookMarks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oQh-ER-Cg3"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c3F-Ot-hqv">
+                                        <rect key="frame" x="366" y="0.0" width="48" height="44"/>
+                                        <gestureRecognizers/>
+                                        <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="pcz-h5-8gh" appends="YES" id="gkA-DT-UNo"/>
+                                        </connections>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="p8E-4I-LOe"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oja-NM-p8J">
+                                <rect key="frame" x="0.0" y="42" width="414" height="41"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjx-3Z-XY0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ur8-vK-jvf">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvM-2O-Z5Z">
+                                                <rect key="frame" x="350" y="0.0" width="64" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="search"/>
+                                                <connections>
+                                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0Q-yl-WEa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ur8-vK-jvf" firstAttribute="height" secondItem="wvM-2O-Z5Z" secondAttribute="height" id="kGl-Ht-w3R"/>
+                                        </constraints>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-dD-NfX">
+                                        <rect key="frame" x="0.0" y="39" width="414" height="2"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oja-NM-p8J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Sz-VD-vq3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ur8-vK-jvf" secondAttribute="top" constant="2" id="9Zt-vS-rVg"/>
+                            <constraint firstItem="oja-NM-p8J" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hte-qN-5wh"/>
+                            <constraint firstItem="M3J-wj-68a" firstAttribute="top" secondItem="Bjj-CW-6Hb" secondAttribute="bottom" constant="8" symbolic="YES" id="KDk-Jf-XJh"/>
+                            <constraint firstItem="M3J-wj-68a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xut-W1-iqp"/>
+                            <constraint firstItem="M3J-wj-68a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gih-Pf-JEq"/>
+                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="top" secondItem="oja-NM-p8J" secondAttribute="bottom" constant="8" symbolic="YES" id="hej-t4-HyA"/>
+                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jkv-kB-xZh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3J-wj-68a" secondAttribute="trailing" id="oje-OD-Pdh"/>
+                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x4W-6x-ZBu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="webView" id="iHe-nb-gji"/>
+                    <navigationItem key="navigationItem" id="ETC-u2-ecB"/>
+                    <connections>
+                        <outlet property="addToBookBtn" destination="vMf-Eo-qnt" id="DGD-9L-Nah"/>
+                        <outlet property="bookBtn" destination="laO-oJ-Pi3" id="Ia0-iZ-YrI"/>
+                        <outlet property="goBackBtn" destination="7U2-AC-HjK" id="6E5-KW-kGK"/>
+                        <outlet property="goForwardBtn" destination="H9u-nr-vZh" id="85X-aY-lLc"/>
+                        <outlet property="historyRecordBtn" destination="zR2-xD-abq" id="yU3-KX-Cwt"/>
+                        <outlet property="progressView" destination="MH3-dD-NfX" id="2md-7e-XI9"/>
+                        <outlet property="reloadBtn" destination="c3F-Ot-hqv" id="qhH-g7-qwK"/>
+                        <outlet property="searchbtn" destination="wvM-2O-Z5Z" id="l8R-fC-xFX"/>
+                        <outlet property="stackView" destination="M3J-wj-68a" id="jsf-m5-eMI"/>
+                        <outlet property="textfield" destination="ur8-vK-jvf" id="SMj-9q-NyR"/>
+                        <outlet property="textfieldAndSearchBtn" destination="mjx-3Z-XY0" id="I7v-RI-ez3"/>
+                        <outlet property="topStackView" destination="oja-NM-p8J" id="jRP-7l-LH9"/>
+                        <outlet property="webView" destination="Bjj-CW-6Hb" id="fkF-AE-CeF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pcz-h5-8gh">
+                    <connections>
+                        <action selector="reloadTapGuesture:" destination="BYZ-38-t0r" id="7MC-jy-er1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="YpB-Sg-u9w">
+                    <connections>
+                        <action selector="hideTextField:" destination="BYZ-38-t0r" id="OHn-c4-VJr"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1058" y="-368"/>
+        </scene>
+        <!--Pages Table View Controller-->
+        <scene sceneID="2TD-QN-N80">
+            <objects>
+                <tableViewController id="RYa-Bv-hOC" customClass="PagesTableViewController" customModule="web" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a79-dq-0eu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" textLabel="2Zt-zy-Se3" detailTextLabel="GES-mw-eei" rowHeight="73" style="IBUITableViewCellStyleSubtitle" id="OkA-kl-t1e">
+                                <rect key="frame" x="0.0" y="28" width="414" height="73"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OkA-kl-t1e" id="bpQ-Zu-NZC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Zt-zy-Se3">
+                                            <rect key="frame" x="20" y="16" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GES-mw-eei">
+                                            <rect key="frame" x="20" y="39.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="V5L-wb-p0L" kind="unwind" identifier="unwind" unwindAction="unwindFromPagesVCWithSegue:" id="EXp-O2-Svx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="RYa-Bv-hOC" id="Vo5-lb-udx"/>
+                            <outlet property="delegate" destination="RYa-Bv-hOC" id="ykb-T9-iaQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="8Is-mj-e0E">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Back" id="FDK-1s-L47">
+                                <connections>
+                                    <action selector="backToWeb:" destination="RYa-Bv-hOC" id="GkS-z3-Iy3"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="pencil.circle.fill" catalog="system" id="3lB-2i-wdA"/>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="oPp-v0-qjk"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBarButton" destination="FDK-1s-L47" id="xCT-BE-cKl"/>
+                        <outlet property="rhBarBtn" destination="oPp-v0-qjk" id="RK5-vy-gFQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nY-Mb-nyc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="V5L-wb-p0L" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-433"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H6l-OB-dPo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2kl-SS-G9s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="znN-99-5Ib">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RYa-Bv-hOC" kind="relationship" relationship="rootViewController" id="MZA-QI-Hzr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGP-7g-4Xc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="-750"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JpS-Gf-MJn"/>
+    </inferredMetricsTieBreakers>
+</document>
