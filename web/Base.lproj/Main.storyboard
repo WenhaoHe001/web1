@@ -226,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="996" y="-433"/>
         </scene>
-        <!--View Controller-->
+        <!--Text View View Controller-->
         <scene sceneID="F4X-xq-Z3J">
             <objects>
-                <viewController id="eYJ-mQ-0Zt" sceneMemberID="viewController">
+                <viewController id="eYJ-mQ-0Zt" customClass="TextViewViewController" customModule="web" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHb-CO-Gdv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,8 +252,16 @@
                         <viewLayoutGuide key="safeArea" id="AEc-cj-Vbb"/>
                     </view>
                     <navigationItem key="navigationItem" id="fiV-sD-H3i">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="kBa-yB-tvw"/>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="kBa-yB-tvw">
+                            <connections>
+                                <action selector="hideKeyboard:" destination="eYJ-mQ-0Zt" id="foS-vh-1RY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="kBa-yB-tvw" id="d0I-qA-2Nd"/>
+                        <outlet property="myTextView" destination="0mM-wV-mFI" id="XT7-0K-MjP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPf-nq-9qA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
