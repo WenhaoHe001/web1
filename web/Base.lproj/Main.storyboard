@@ -208,7 +208,11 @@
                                     <action selector="backToWeb:" destination="RYa-Bv-hOC" id="GkS-z3-Iy3"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="pencil.circle.fill" catalog="system" id="3lB-2i-wdA"/>
+                            <barButtonItem title="Item" image="pencil.circle.fill" catalog="system" id="3lB-2i-wdA">
+                                <connections>
+                                    <segue destination="eYJ-mQ-0Zt" kind="show" id="a8m-vh-we0"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="oPp-v0-qjk"/>
                     </navigationItem>
@@ -221,6 +225,39 @@
                 <exit id="V5L-wb-p0L" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="996" y="-433"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F4X-xq-Z3J">
+            <objects>
+                <viewController id="eYJ-mQ-0Zt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHb-CO-Gdv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0mM-wV-mFI">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0mM-wV-mFI" firstAttribute="top" secondItem="AEc-cj-Vbb" secondAttribute="top" id="HcC-2F-NDv"/>
+                            <constraint firstItem="0mM-wV-mFI" firstAttribute="leading" secondItem="AEc-cj-Vbb" secondAttribute="leading" id="IUU-F0-lGu"/>
+                            <constraint firstItem="AEc-cj-Vbb" firstAttribute="bottom" secondItem="0mM-wV-mFI" secondAttribute="bottom" id="T8C-6z-AuT"/>
+                            <constraint firstItem="AEc-cj-Vbb" firstAttribute="trailing" secondItem="0mM-wV-mFI" secondAttribute="trailing" id="W7w-LW-WPS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AEc-cj-Vbb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fiV-sD-H3i">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="kBa-yB-tvw"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPf-nq-9qA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="-437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H6l-OB-dPo">

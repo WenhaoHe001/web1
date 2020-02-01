@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		730353F523E5559300091760 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353E923E5559200091760 /* LineView.swift */; };
-		730353F623E5559300091760 /* ClearedRecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353EA23E5559200091760 /* ClearedRecordsTableViewController.swift */; };
-		730353F723E5559300091760 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353EB23E5559200091760 /* ImageFetcher.swift */; };
-		730353F823E5559300091760 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353EC23E5559200091760 /* InfoViewController.swift */; };
-		730353F923E5559300091760 /* DeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353ED23E5559200091760 /* DeleteTableViewCell.swift */; };
-		730353FA23E5559300091760 /* addEmojiArtGestureRecognizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353EE23E5559200091760 /* addEmojiArtGestureRecognizers.swift */; };
-		730353FB23E5559300091760 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353EF23E5559200091760 /* StoryViewController.swift */; };
-		730353FC23E5559300091760 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353F023E5559200091760 /* TimeModel.swift */; };
-		730353FD23E5559300091760 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353F123E5559200091760 /* TimerViewController.swift */; };
-		730353FE23E5559300091760 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353F223E5559200091760 /* TimeTableViewCell.swift */; };
-		730353FF23E5559300091760 /* ToTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353F323E5559200091760 /* ToTapView.swift */; };
-		7303540023E5559300091760 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730353F423E5559300091760 /* Story.swift */; };
 		731D96752384E4C0002BFACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D96742384E4C0002BFACE /* AppDelegate.swift */; };
 		731D96772384E4C0002BFACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D96762384E4C0002BFACE /* SceneDelegate.swift */; };
 		731D96792384E4C0002BFACE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D96782384E4C0002BFACE /* MainViewController.swift */; };
@@ -28,6 +16,7 @@
 		731D968923850466002BFACE /* 二维码.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 731D968823850466002BFACE /* 二维码.pdf */; };
 		734FD76D23D20A3B00BDB662 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734FD76C23D20A3B00BDB662 /* NotesTableViewController.swift */; };
 		734FD77123D20D9000BDB662 /* NoteTableViewcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734FD77023D20D9000BDB662 /* NoteTableViewcell.swift */; };
+		738BF0A323E5871400696270 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738BF0A223E5871400696270 /* TextViewViewController.swift */; };
 		738C56DE239DB04200D4A46D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738C56DD239DB04200D4A46D /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		739F907D238BC3180035F12A /* PagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739F907C238BC3180035F12A /* PagesTableViewController.swift */; };
 		73A2B39D2390C26400DB5480 /* AVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A2B39C2390C26400DB5480 /* AVViewController.swift */; };
@@ -38,18 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		730353E923E5559200091760 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
-		730353EA23E5559200091760 /* ClearedRecordsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearedRecordsTableViewController.swift; sourceTree = "<group>"; };
-		730353EB23E5559200091760 /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
-		730353EC23E5559200091760 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		730353ED23E5559200091760 /* DeleteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTableViewCell.swift; sourceTree = "<group>"; };
-		730353EE23E5559200091760 /* addEmojiArtGestureRecognizers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addEmojiArtGestureRecognizers.swift; sourceTree = "<group>"; };
-		730353EF23E5559200091760 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
-		730353F023E5559200091760 /* TimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
-		730353F123E5559200091760 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		730353F223E5559200091760 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
-		730353F323E5559200091760 /* ToTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToTapView.swift; sourceTree = "<group>"; };
-		730353F423E5559300091760 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		731D96712384E4C0002BFACE /* web.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = web.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		731D96742384E4C0002BFACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		731D96762384E4C0002BFACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +38,7 @@
 		731D968823850466002BFACE /* 二维码.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "二维码.pdf"; sourceTree = "<group>"; };
 		734FD76C23D20A3B00BDB662 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		734FD77023D20D9000BDB662 /* NoteTableViewcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewcell.swift; sourceTree = "<group>"; };
+		738BF0A223E5871400696270 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
 		738C56DD239DB04200D4A46D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		739F907C238BC3180035F12A /* PagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTableViewController.swift; sourceTree = "<group>"; };
 		73A2B39C2390C26400DB5480 /* AVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVViewController.swift; sourceTree = "<group>"; };
@@ -82,25 +60,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		730353E823E5557900091760 /* timer */ = {
-			isa = PBXGroup;
-			children = (
-				730353EE23E5559200091760 /* addEmojiArtGestureRecognizers.swift */,
-				730353EA23E5559200091760 /* ClearedRecordsTableViewController.swift */,
-				730353ED23E5559200091760 /* DeleteTableViewCell.swift */,
-				730353EB23E5559200091760 /* ImageFetcher.swift */,
-				730353EC23E5559200091760 /* InfoViewController.swift */,
-				730353E923E5559200091760 /* LineView.swift */,
-				730353F423E5559300091760 /* Story.swift */,
-				730353EF23E5559200091760 /* StoryViewController.swift */,
-				730353F023E5559200091760 /* TimeModel.swift */,
-				730353F123E5559200091760 /* TimerViewController.swift */,
-				730353F223E5559200091760 /* TimeTableViewCell.swift */,
-				730353F323E5559200091760 /* ToTapView.swift */,
-			);
-			path = timer;
-			sourceTree = "<group>";
-		};
 		731D96682384E4C0002BFACE = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +85,7 @@
 				731D96782384E4C0002BFACE /* MainViewController.swift */,
 				73F5ED51239638AD00AB76C6 /* WebView.swift */,
 				731D967A2384E4C0002BFACE /* Main.storyboard */,
+				738BF0A223E5871400696270 /* TextViewViewController.swift */,
 				734FD76C23D20A3B00BDB662 /* NotesTableViewController.swift */,
 				734FD77023D20D9000BDB662 /* NoteTableViewcell.swift */,
 				73AF981E23901A0A0022F278 /* BookMarks.swift */,
@@ -133,7 +93,6 @@
 				731D967D2384E4C3002BFACE /* Assets.xcassets */,
 				731D967F2384E4C3002BFACE /* LaunchScreen.storyboard */,
 				731D968823850466002BFACE /* 二维码.pdf */,
-				730353E823E5557900091760 /* timer */,
 				73A2B3D02393636F00DB5480 /* video */,
 				731D96822384E4C3002BFACE /* Info.plist */,
 			);
@@ -230,28 +189,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				730353FD23E5559300091760 /* TimerViewController.swift in Sources */,
 				739F907D238BC3180035F12A /* PagesTableViewController.swift in Sources */,
 				731D96792384E4C0002BFACE /* MainViewController.swift in Sources */,
-				730353FF23E5559300091760 /* ToTapView.swift in Sources */,
 				73A2B3CF2393621F00DB5480 /* AAViewController.swift in Sources */,
-				730353F623E5559300091760 /* ClearedRecordsTableViewController.swift in Sources */,
-				730353F823E5559300091760 /* InfoViewController.swift in Sources */,
 				73A2B3CD23935E2500DB5480 /* AVideoViewController.swift in Sources */,
-				730353FC23E5559300091760 /* TimeModel.swift in Sources */,
 				731D96752384E4C0002BFACE /* AppDelegate.swift in Sources */,
-				7303540023E5559300091760 /* Story.swift in Sources */,
 				73A2B39D2390C26400DB5480 /* AVViewController.swift in Sources */,
 				734FD77123D20D9000BDB662 /* NoteTableViewcell.swift in Sources */,
 				734FD76D23D20A3B00BDB662 /* NotesTableViewController.swift in Sources */,
-				730353F923E5559300091760 /* DeleteTableViewCell.swift in Sources */,
-				730353F523E5559300091760 /* LineView.swift in Sources */,
-				730353FE23E5559300091760 /* TimeTableViewCell.swift in Sources */,
-				730353FB23E5559300091760 /* StoryViewController.swift in Sources */,
-				730353FA23E5559300091760 /* addEmojiArtGestureRecognizers.swift in Sources */,
 				73F5ED52239638AD00AB76C6 /* WebView.swift in Sources */,
-				730353F723E5559300091760 /* ImageFetcher.swift in Sources */,
 				73AF981F23901A0A0022F278 /* BookMarks.swift in Sources */,
+				738BF0A323E5871400696270 /* TextViewViewController.swift in Sources */,
 				731D96772384E4C0002BFACE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
