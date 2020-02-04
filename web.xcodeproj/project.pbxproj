@@ -14,7 +14,6 @@
 		731D967E2384E4C3002BFACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731D967D2384E4C3002BFACE /* Assets.xcassets */; };
 		731D96812384E4C3002BFACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 731D967F2384E4C3002BFACE /* LaunchScreen.storyboard */; };
 		731D968923850466002BFACE /* 二维码.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 731D968823850466002BFACE /* 二维码.pdf */; };
-		734FD76D23D20A3B00BDB662 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734FD76C23D20A3B00BDB662 /* NotesTableViewController.swift */; };
 		734FD77123D20D9000BDB662 /* NoteTableViewcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734FD77023D20D9000BDB662 /* NoteTableViewcell.swift */; };
 		738BF0A323E5871400696270 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738BF0A223E5871400696270 /* TextViewViewController.swift */; };
 		738C56DE239DB04200D4A46D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738C56DD239DB04200D4A46D /* WebKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -36,7 +35,6 @@
 		731D96802384E4C3002BFACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		731D96822384E4C3002BFACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731D968823850466002BFACE /* 二维码.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "二维码.pdf"; sourceTree = "<group>"; };
-		734FD76C23D20A3B00BDB662 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		734FD77023D20D9000BDB662 /* NoteTableViewcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewcell.swift; sourceTree = "<group>"; };
 		738BF0A223E5871400696270 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
 		738C56DD239DB04200D4A46D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -86,7 +84,6 @@
 				73F5ED51239638AD00AB76C6 /* WebView.swift */,
 				731D967A2384E4C0002BFACE /* Main.storyboard */,
 				738BF0A223E5871400696270 /* TextViewViewController.swift */,
-				734FD76C23D20A3B00BDB662 /* NotesTableViewController.swift */,
 				734FD77023D20D9000BDB662 /* NoteTableViewcell.swift */,
 				73AF981E23901A0A0022F278 /* BookMarks.swift */,
 				739F907C238BC3180035F12A /* PagesTableViewController.swift */,
@@ -196,7 +193,6 @@
 				731D96752384E4C0002BFACE /* AppDelegate.swift in Sources */,
 				73A2B39D2390C26400DB5480 /* AVViewController.swift in Sources */,
 				734FD77123D20D9000BDB662 /* NoteTableViewcell.swift in Sources */,
-				734FD76D23D20A3B00BDB662 /* NotesTableViewController.swift in Sources */,
 				73F5ED52239638AD00AB76C6 /* WebView.swift in Sources */,
 				73AF981F23901A0A0022F278 /* BookMarks.swift in Sources */,
 				738BF0A323E5871400696270 /* TextViewViewController.swift in Sources */,
