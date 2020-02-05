@@ -69,4 +69,7 @@ class TextViewViewController: UIViewController, UITextViewDelegate {
     }
     */
     
+    @IBAction func dismiss(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

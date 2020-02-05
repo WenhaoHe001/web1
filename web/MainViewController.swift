@@ -9,12 +9,18 @@
 import UIKit
 import WebKit
 import os.log
+import SafariServices
 
 class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate
 {
 
     //MARK:-outlet properties
     
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
     
     @IBOutlet weak var progressView: UIProgressView!
     
@@ -27,15 +33,10 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
     
     @IBOutlet weak var addToBookBtn: UIButton!
     @IBOutlet weak var historyRecordBtn: UIButton!
-    @IBOutlet weak var textfieldAndSearchBtn: UIStackView!
-    @IBOutlet weak var textfield: UITextField! {
-        didSet {
-            textfield.delegate = self
 
-        }
-    }
     @IBOutlet weak var webView: WKWebView! {
         didSet {
+
             webView.uiDelegate = self
             webView.navigationDelegate = self
             webView.scrollView.delegate = self
@@ -44,7 +45,15 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
         }
     }
     
-    @IBOutlet weak var searchbtn: UIButton!
+    // Call this method when you want to show the browser // safari 无用待删
+    func doSomething() { //无用待删 old reference
+        
+
+        print("doSomething")
+//        let url = URL(string: "https://www.baidu.com")!
+//        let safariViewController = SFSafariViewController(url: url)
+//        present(safariViewController, animated: true, completion: nil)
+    }
     
     private var bookMarks = BookMarks()
     
@@ -52,26 +61,25 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
     
     
     //MARK: -IBActions
-    @IBAction func search(_ sender: UIButton) {
-        if textfield.text != nil {
-         urlString = textfield.text
-        }
-    }
+
     
     @IBAction func goBackAction(_ sender: UIButton) {
         if webView.canGoBack {
             webView.goBack()
             if let url = webView.url {
-                textfield.text = url.absoluteString
+                searchBar.text = url.absoluteString
             }
             
         }
     }
     
-    @IBAction func hideTextField(_ sender: UITapGestureRecognizer) {
+    
+    @IBAction func hideKeyBoard(_ sender: UITapGestureRecognizer) {
         switch sender.state {
         case .ended:
-            textfield.resignFirstResponder()
+            searchBar.resignFirstResponder()
+//            searchBar.isHidden = true
+            
         default:
             break
         }
@@ -97,30 +105,16 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
         if webView.canGoForward {
         webView.goForward()
             if let url = webView.url {
-                textfield.text = url.absoluteString
+                searchBar.text = url.absoluteString
             }
         }
     }
     
-    @IBAction func addURLToBookMarks(_ sender: UIButton) {
-        if let url = webView.url?.absoluteString, let title = webView.title
-        {
-            if !bookMarks.titles.contains(title) || !bookMarks.urls.contains(url)
-            {
-                bookMarks.titles.append(title)
-                bookMarks.urls.append(url)
-            }
-        }
-        saveBookMarks()
-        let alert = UIAlertController(title: "Add to bookMakrs success", message: nil, preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
+
     
     private var urlString: String? {
         get {
-            return textfield.text
+            return searchBar.text
         }
         set {
             let urlpre = "http"
@@ -173,7 +167,8 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
         if segue.identifier == "unwind" {
             if let scoureVC = segue.source as? PagesTableViewController {
                 if let indexpath = scoureVC.tableView.indexPathForSelectedRow {
-                    textfield.text = scoureVC.urlsModelurl[indexpath.row]
+                    searchBar.text = scoureVC.urlsModelurl[indexpath.row]
+                    
                     urlString = scoureVC.urlsModelurl[indexpath.row]
                 }
             }
@@ -189,6 +184,25 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
 //    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let swipeThreshold: CGFloat = 10
+         let y = scrollView.panGestureRecognizer.translation(in: scrollView).y
+         if y != 0 && swipeThreshold > y {
+//             navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 0.5, delay: 0.2, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+                if !self.searchBar.isHidden {
+                    self.searchBar.isHidden = true
+                }
+            })
+         } else {
+//             navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 0.5, delay: 0.2, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                if self.searchBar.isHidden {
+                    self.searchBar.isHidden = false
+                }
+            })
+         }
+        
 //        topStackView.isHidden = true
 //        webView.scrollView.scrollRectToVisible(CGRect(x: 0, y: 200, width: webView.bounds.width, height: webView.bounds.height), animated: true)
     }
@@ -206,24 +220,7 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
 //        return true
 //    }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textfield.text = ""
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print("textFieldDidEndEditing")
 
-        if textField.text != "" {
-        urlString = textField.text
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn")
-        urlString = textField.text
-        textfield.resignFirstResponder()
-        return true
-    }
     
     
     //MARK: - lifecycle
@@ -232,7 +229,7 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
         if let newValue = loadMarks() {
             bookMarks = newValue
         }
-        
+
 //        webView.load(<#T##data: Data##Data#>, mimeType: <#T##String#>, characterEncodingName: <#T##String#>, baseURL: <#T##URL#>)
         //estimatedProgress
 //        //控制器推出的模式
@@ -333,7 +330,7 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
         let urlrequest = URLRequest(url: url)
         webView.load(urlrequest)
         webView.allowsBackForwardNavigationGestures = true
-        textfield.resignFirstResponder()
+        searchBar?.resignFirstResponder()
 //        webView.observeValue(forKeyPath: "?", of: <#T##Any?#>, change: <#T##[NSKeyValueChangeKey : Any]?#>, context: <#T##UnsafeMutableRawPointer?#>)
         if webView.isLoading, webView.title != nil {
             print("isLoading: " + webView.title!)
@@ -363,7 +360,7 @@ class MainViewController: UIViewController,UITextFieldDelegate, WKUIDelegate, WK
          if webView.isLoading {
              if let url = webView.url?.absoluteString, let title = webView.title  {
                            
-                           textfield.text = url
+                           searchBar.text = url
                            
                            searchedStrings.titles.append(title)
                            searchedStrings.urls.append(url)
@@ -480,4 +477,62 @@ extension Array where Element: Equatable {
         forEach { if !elements.contains($0) { elements.append($0) } }
         return elements
     }
+}
+
+
+extension MainViewController: UISearchBarDelegate {
+    
+    
+    
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+//        doSomething()  // safari 模拟
+
+        var alertText = "Already add to bookMakrs"
+        
+        if let url = webView.url?.absoluteString, let title = webView.title
+        {
+            if !bookMarks.titles.contains(title) || !bookMarks.urls.contains(url)
+            {
+                bookMarks.titles.append(title)
+                bookMarks.urls.append(url)
+                
+                alertText = "Add to bookMakrs success"
+            }
+        }
+        saveBookMarks()
+        
+        let alert = UIAlertController(title: alertText, message: nil, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        startSearch(searchBar)
+    }
+    
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        startSearch(searchBar)
+        searchBar.resignFirstResponder()
+
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("searchBarTextDidBeginEditing")
+    }
+    
+
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        webView.stopLoading()
+    }
+    
+    private func startSearch(_ searchBar: UISearchBar) {
+        if searchBar.text != "" {
+            urlString = searchBar.text
+        }
+    }
+
 }

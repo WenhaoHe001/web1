@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--webView-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="web" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="719" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-CW-6Hb">
-                                <rect key="frame" x="0.0" y="91" width="414" height="719"/>
+                            <wkWebView contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="724" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bjj-CW-6Hb">
+                                <rect key="frame" x="0.0" y="100" width="414" height="724"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
@@ -28,11 +27,27 @@
                                     <outletCollection property="gestureRecognizers" destination="YpB-Sg-u9w" appends="YES" id="eTb-eR-T0L"/>
                                 </connections>
                             </wkWebView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="oja-NM-p8J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="59"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" showsBookmarkButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-xX-tVA">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-dD-NfX">
+                                        <rect key="frame" x="0.0" y="57" width="414" height="2"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="M3J-wj-68a">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="824" width="414" height="52"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U2-AC-HjK">
-                                        <rect key="frame" x="0.0" y="0.0" width="58" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <state key="normal" title="&lt;"/>
                                         <connections>
@@ -40,7 +55,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-nr-vZh">
-                                        <rect key="frame" x="60" y="0.0" width="58" height="44"/>
+                                        <rect key="frame" x="56" y="0.0" width="54.5" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <state key="normal" title="&gt;"/>
                                         <connections>
@@ -48,28 +63,28 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laO-oJ-Pi3">
-                                        <rect key="frame" x="120" y="0.0" width="60" height="44"/>
+                                        <rect key="frame" x="112.5" y="0.0" width="56" height="52"/>
                                         <state key="normal" title="书签"/>
                                         <connections>
                                             <segue destination="2kl-SS-G9s" kind="presentation" identifier="showBookMarks" id="JpS-Gf-MJn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-xD-abq">
-                                        <rect key="frame" x="182" y="0.0" width="120" height="44"/>
+                                        <rect key="frame" x="170.5" y="0.0" width="112" height="52"/>
                                         <state key="normal" title="历史记录"/>
                                         <connections>
                                             <segue destination="2kl-SS-G9s" kind="presentation" identifier="showHistorys" id="TlQ-7L-8vK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMf-Eo-qnt">
-                                        <rect key="frame" x="304" y="0.0" width="60" height="44"/>
-                                        <state key="normal" title="收藏"/>
+                                        <rect key="frame" x="284.5" y="0.0" width="83.5" height="52"/>
+                                        <state key="normal" title="记事本"/>
                                         <connections>
-                                            <action selector="addURLToBookMarks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oQh-ER-Cg3"/>
+                                            <segue destination="FE1-DJ-afD" kind="presentation" modalPresentationStyle="fullScreen" id="qXc-ck-8is"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c3F-Ot-hqv">
-                                        <rect key="frame" x="366" y="0.0" width="48" height="44"/>
+                                        <rect key="frame" x="370" y="0.0" width="44" height="52"/>
                                         <gestureRecognizers/>
                                         <color key="color" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -77,56 +92,23 @@
                                         </connections>
                                     </activityIndicatorView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="p8E-4I-LOe"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oja-NM-p8J">
-                                <rect key="frame" x="0.0" y="42" width="414" height="41"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjx-3Z-XY0">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ur8-vK-jvf">
-                                                <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvM-2O-Z5Z">
-                                                <rect key="frame" x="350" y="0.0" width="64" height="39"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <state key="normal" title="search"/>
-                                                <connections>
-                                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0Q-yl-WEa"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="ur8-vK-jvf" firstAttribute="height" secondItem="wvM-2O-Z5Z" secondAttribute="height" id="kGl-Ht-w3R"/>
-                                        </constraints>
-                                    </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-dD-NfX">
-                                        <rect key="frame" x="0.0" y="39" width="414" height="2"/>
-                                    </progressView>
-                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="top" secondItem="K2K-xX-tVA" secondAttribute="bottom" id="0l1-pE-NOz"/>
                             <constraint firstItem="oja-NM-p8J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Sz-VD-vq3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ur8-vK-jvf" secondAttribute="top" constant="2" id="9Zt-vS-rVg"/>
+                            <constraint firstItem="M3J-wj-68a" firstAttribute="top" secondItem="Bjj-CW-6Hb" secondAttribute="bottom" id="DLT-bu-U5o"/>
+                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FxW-Tx-X6c"/>
                             <constraint firstItem="oja-NM-p8J" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hte-qN-5wh"/>
-                            <constraint firstItem="M3J-wj-68a" firstAttribute="top" secondItem="Bjj-CW-6Hb" secondAttribute="bottom" constant="8" symbolic="YES" id="KDk-Jf-XJh"/>
+                            <constraint firstItem="oja-NM-p8J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VGf-O8-hYx"/>
                             <constraint firstItem="M3J-wj-68a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xut-W1-iqp"/>
-                            <constraint firstItem="M3J-wj-68a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gih-Pf-JEq"/>
-                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="top" secondItem="oja-NM-p8J" secondAttribute="bottom" constant="8" symbolic="YES" id="hej-t4-HyA"/>
-                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jkv-kB-xZh"/>
+                            <constraint firstItem="M3J-wj-68a" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-20" id="gih-Pf-JEq"/>
+                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iQk-GR-ZKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3J-wj-68a" secondAttribute="trailing" id="oje-OD-Pdh"/>
-                            <constraint firstItem="Bjj-CW-6Hb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x4W-6x-ZBu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="webView" id="iHe-nb-gji"/>
                     <navigationItem key="navigationItem" id="ETC-u2-ecB"/>
                     <connections>
                         <outlet property="addToBookBtn" destination="vMf-Eo-qnt" id="DGD-9L-Nah"/>
@@ -136,10 +118,8 @@
                         <outlet property="historyRecordBtn" destination="zR2-xD-abq" id="yU3-KX-Cwt"/>
                         <outlet property="progressView" destination="MH3-dD-NfX" id="2md-7e-XI9"/>
                         <outlet property="reloadBtn" destination="c3F-Ot-hqv" id="qhH-g7-qwK"/>
-                        <outlet property="searchbtn" destination="wvM-2O-Z5Z" id="l8R-fC-xFX"/>
+                        <outlet property="searchBar" destination="K2K-xX-tVA" id="bjf-Gu-iBk"/>
                         <outlet property="stackView" destination="M3J-wj-68a" id="jsf-m5-eMI"/>
-                        <outlet property="textfield" destination="ur8-vK-jvf" id="SMj-9q-NyR"/>
-                        <outlet property="textfieldAndSearchBtn" destination="mjx-3Z-XY0" id="I7v-RI-ez3"/>
                         <outlet property="topStackView" destination="oja-NM-p8J" id="jRP-7l-LH9"/>
                         <outlet property="webView" destination="Bjj-CW-6Hb" id="fkF-AE-CeF"/>
                     </connections>
@@ -152,11 +132,11 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="YpB-Sg-u9w">
                     <connections>
-                        <action selector="hideTextField:" destination="BYZ-38-t0r" id="OHn-c4-VJr"/>
+                        <action selector="hideKeyBoard:" destination="BYZ-38-t0r" id="OHn-c4-VJr"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1058" y="-368"/>
+            <point key="canvasLocation" x="-149.27536231884059" y="-368.30357142857139"/>
         </scene>
         <!--Pages Table View Controller-->
         <scene sceneID="2TD-QN-N80">
@@ -208,11 +188,7 @@
                                     <action selector="backToWeb:" destination="RYa-Bv-hOC" id="GkS-z3-Iy3"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="pencil.circle.fill" catalog="system" id="3lB-2i-wdA">
-                                <connections>
-                                    <segue destination="eYJ-mQ-0Zt" kind="show" id="a8m-vh-we0"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem title="Item" image="pencil.circle.fill" catalog="system" id="3lB-2i-wdA"/>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="oPp-v0-qjk"/>
                     </navigationItem>
@@ -224,34 +200,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nY-Mb-nyc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="V5L-wb-p0L" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-433"/>
+            <point key="canvasLocation" x="2815.9420289855075" y="-433.25892857142856"/>
         </scene>
         <!--Text View View Controller-->
         <scene sceneID="F4X-xq-Z3J">
             <objects>
                 <viewController id="eYJ-mQ-0Zt" customClass="TextViewViewController" customModule="web" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHb-CO-Gdv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0mM-wV-mFI">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0mM-wV-mFI" firstAttribute="top" secondItem="AEc-cj-Vbb" secondAttribute="top" id="HcC-2F-NDv"/>
                             <constraint firstItem="0mM-wV-mFI" firstAttribute="leading" secondItem="AEc-cj-Vbb" secondAttribute="leading" id="IUU-F0-lGu"/>
-                            <constraint firstItem="AEc-cj-Vbb" firstAttribute="bottom" secondItem="0mM-wV-mFI" secondAttribute="bottom" id="T8C-6z-AuT"/>
                             <constraint firstItem="AEc-cj-Vbb" firstAttribute="trailing" secondItem="0mM-wV-mFI" secondAttribute="trailing" id="W7w-LW-WPS"/>
+                            <constraint firstAttribute="bottom" secondItem="0mM-wV-mFI" secondAttribute="bottom" id="w46-42-Kkd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AEc-cj-Vbb"/>
                     </view>
                     <navigationItem key="navigationItem" id="fiV-sD-H3i">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="73y-8c-Pyk">
+                            <connections>
+                                <action selector="dismiss:" destination="eYJ-mQ-0Zt" id="17h-tP-a1J"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="完成" id="kBa-yB-tvw">
                             <connections>
                                 <action selector="hideKeyboard:" destination="eYJ-mQ-0Zt" id="foS-vh-1RY"/>
@@ -265,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPf-nq-9qA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="-437"/>
+            <point key="canvasLocation" x="1618.840579710145" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H6l-OB-dPo">
@@ -283,7 +264,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGP-7g-4Xc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238" y="-750"/>
+            <point key="canvasLocation" x="1147.8260869565217" y="-750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3ZE-x6-kpG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FE1-DJ-afD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MH5-m6-FeN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eYJ-mQ-0Zt" kind="relationship" relationship="rootViewController" id="FJb-nc-pzy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6t8-UL-Rfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708.69565217391312" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
